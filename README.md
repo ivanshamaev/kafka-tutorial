@@ -1,4 +1,14 @@
 # kafka-tutorial
+```
+kafka-tutorial/
+├── docker-compose.yml      # Docker Compose config for Zookeeper, Kafka broker, Kafdrop
+├── .gitignore             # Ignore rules for Python, Docker, IDE, etc.
+├── producer/
+│   └── producer.py        # Python producer: отправляет тестовые сообщения в Kafka
+├── consumer/
+│   └── consumer.py        # Python consumer: читает сообщения из Kafka
+```
+
 This repository contains a minimal Kafka tutorial setup using Docker Compose. It runs ZooKeeper, a single Kafka broker and Kafdrop (UI) so you can inspect topics and messages.
 
 Quick overview:
@@ -38,3 +48,8 @@ docker exec -it broker kafka-topics --create --topic test-topic --bootstrap-serv
 python producer/producer.py
 ```
 
+# Запуск Consumer
+
+```
+python consumer/consumer.py
+```

@@ -1,12 +1,7 @@
 import json
 import time
-import os
-import sys
-import logging
 from kafka import KafkaProducer
-import json
 from datetime import datetime
-import time
 
 # Конфигурация продюсера
 producer = KafkaProducer(
@@ -17,32 +12,9 @@ producer = KafkaProducer(
 # Имя топика
 TOPIC_NAME = "test-topic"
 
-def send_test_message():
-    # Создаем тестовое сообщение
-    message = {
-        "message": "Test message",
-        "timestamp": datetime.now().isoformat(),
-        "counter": 0
-    }
-    
-    try:
-        # Отправляем сообщение
-        future = producer.send(TOPIC_NAME, value=message)
-        # Ждем подтверждения отправки
-        record_metadata = future.get(timeout=10)
-        
-        print(f"Message sent successfully:")
-        print(f"Topic: {record_metadata.topic}")
-        print(f"Partition: {record_metadata.partition}")
-        print(f"Offset: {record_metadata.offset}")
-        print(f"Message: {message}")
-        
-    except Exception as e:
-        print(f"Error sending message: {e}")
-
 def main():
     try:
-        for counter in range(20):
+        for counter in range(10):
             message = {
                 "message": f"Test message #{counter}",
                 "timestamp": datetime.now().isoformat(),

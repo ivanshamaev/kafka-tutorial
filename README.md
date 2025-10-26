@@ -1,7 +1,7 @@
 # kafka-tutorial
 ```
 kafka-tutorial/
-├── docker-compose.yml      # Docker Compose config for Zookeeper, Kafka broker, Kafdrop
+├── docker-compose.yml     # Docker Compose config for Zookeeper, Kafka broker, Kafdrop
 ├── .gitignore             # Ignore rules for Python, Docker, IDE, etc.
 ├── producer/
 │   └── producer.py        # Python producer: отправляет тестовые сообщения в Kafka
